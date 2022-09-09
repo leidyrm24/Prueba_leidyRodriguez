@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Web_Front_Leidy.Models.SELLER>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LAST_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOCUMENT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCTION)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LAST_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOCUMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CITY_ID)
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.CODE })
+            </td>
+            <td>
+                @Html.ActionLink("Seleccionar", "Delete", new { id = item.CODE })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
